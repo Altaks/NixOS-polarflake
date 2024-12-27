@@ -1,0 +1,121 @@
+//   _____ _____ _____ _____ _____ _____ _____ _____ _____ 
+//  |   __|  _  |   __|_   _|   __|   __|_   _|     |  |  |
+//  |   __|     |__   | | | |   __|   __| | | |   --|     |
+//  |__|  |__|__|_____| |_| |__|  |_____| |_| |_____|__|__|  GROUPS
+//
+//  by Bina
+
+  
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    /**
+    "logo": {
+      "source": "~/Images/furina1.png",
+      "type": "kitty-direct",
+        "height": 20,
+        "width": 42,
+        "padding": {
+        "top": 1
+        }
+    },
+    **/
+    "display": {
+          "separator": " ➜  "
+    },
+    "modules": [
+        "break",
+         {
+            "type": "os",
+            "key": "OS   ",
+            "keyColor": "38;2;203;166;247",  
+        },
+        {
+            "type": "kernel",
+            "key": " ├ \uebc6 ",
+            "keyColor": "38;2;203;166;247",
+        },
+        {
+            "type": "packages",
+            "format": "{} (nix-search)",
+            "key": " ├ \udb80\udfd6 ",
+            "keyColor": "38;2;203;166;247",  
+        },
+        {
+            "type": "shell",
+            "key": " └ \uf489 ",
+            "keyColor": "38;2;203;166;247", // rgb(203, 166, 247)
+        },
+        "break",
+        {
+            "type": "wm",
+            "key": "WM   ",
+            "keyColor": "38;2;137;180;250", // rgb(137, 180, 250)
+        },
+        {
+            "type": "terminal",
+            "key": " ├ \ue795 ",
+            "keyColor": "38;2;137;180;250",
+        },
+        {
+            "type": "terminalfont",
+            "key": " ├ \ue795 ",
+            "keyColor": "38;2;137;180;250", 
+        },
+        {
+          "type": "media",
+          "key": " ├ \uf144 ",
+          "keyColor": "38;2;137;180;250", 
+      },
+        {
+          "type": "player",
+          "key": " └ \udb82\udd9a ",
+          "keyColor": "38;2;137;180;250", 
+        },
+        "break",
+        {
+            "type": "host",
+            "format": "{5} {1} Type {2}",
+            "key": "PC   ",
+            "keyColor": "38;2;148;226;213", // rgb(148, 226, 213)
+        },
+        {
+            "type": "cpu",
+            "format": "{1} ({3}) @ {7} GHz",
+            "key": " ├ \uf4bc ",
+            "keyColor": "38;2;148;226;213",
+        },
+        {
+            "type": "gpu",
+            "format": "{1} {2} @ {12} GHz",            
+            "key": " ├ \udb82\udcae ",
+            "keyColor": "38;2;148;226;213",
+        },
+        {
+            "type": "memory",
+            "key": " ├ \uefc5 ",
+            "keyColor": "38;2;148;226;213",
+        },
+        {
+            "type": "swap",
+            "key": " ├ \udb81\udce1 ",
+            "keyColor": "38;2;148;226;213",
+        },
+        {
+            "type": "battery",
+            "key": " ├ \uf240 ",
+            "keyColor": "38;2;148;226;213",
+        },
+        {
+          "type": "disk",
+          "key": " ├ \udb80\udeca ",
+          "keyColor": "38;2;148;226;213",
+        },
+        {
+            "type": "monitor",
+            "key": " └ \udb80\udf79 ",
+            "keyColor": "38;2;148;226;213",
+        },
+        "break",
+        "break"
+    ]
+  }
