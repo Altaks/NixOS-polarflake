@@ -7,5 +7,8 @@
 
     # Minetest client from team building purposes
     minetestclient
+
+    # One Drive - https://nixos.wiki/wiki/OneDrive
+    onedrive
   ];
 }

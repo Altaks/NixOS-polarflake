@@ -1,9 +1,9 @@
 { inputs, config, lib, pkgs, ... }: { 
 
   environment.systemPackages = with pkgs; [
-    git
-    lazygit
-    gh
-    github-desktop
+    cron
+    cronutils
+    go-task
+    just
   ];
 }

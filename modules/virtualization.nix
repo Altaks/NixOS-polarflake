@@ -16,6 +16,13 @@
       enable = true;
       enableExtensionPack = true;
     };
+    podman = {
+      enable = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+    containers = {
+      enable = true;
+    };
   };
 
   programs.virt-manager.enable = true;
@@ -25,6 +32,8 @@
 
   environment.systemPackages = with pkgs; [
     qemu_full
+    dive
+    podman-tui
   ];
 
 }

@@ -19,18 +19,36 @@
           catppuccin.catppuccin-vsc-icons
           catppuccin.catppuccin-vsc
 
+          # Justfiles
+          skellock.just
+
           # Open PDFs
           tomoki1207.pdf
 
+          # Markdown
           yzhang.markdown-all-in-one
-          vscjava.vscode-gradle
-
+          
+          # Flutter support
           dart-code.flutter
           alexisvt.flutter-snippets
 
+          # Error lens
           usernamehw.errorlens
 
+          # Deno support
           denoland.vscode-deno
+
+          # Kubernetes
+          ms-kubernetes-tools.vscode-kubernetes-tools
+
+          # Docker
+          ms-azuretools.vscode-docker
+
+          # Paths intellisense
+          christian-kohler.path-intellisense
+
+          # Rust support
+          rust-lang.rust-analyzer
         ];
       })
 
