@@ -5,6 +5,7 @@
     ./ui-ux
     ./sysadmin
     ./devops
+    ./maths
 
     ./editors.nix
     ./graphics.nix

@@ -51,13 +51,6 @@
 
           # Rust support
           rust-lang.rust-analyzer
-        ]  ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-          {
-            name = "codeium";
-            publisher = "Codeium";
-            version = "1.31.18";
-            sha256 = "sha256-hLoCQqLOlEd/IV5MkoAjJULfhl5DdnnqG0BT1iU1xfQ=";
-          }
         ];
       })
 
