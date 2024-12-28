@@ -38,7 +38,7 @@
           };
           modules = [
             ./configuration.nix
-            nixos-hardware.nixosModules.lenovo-legion-15ach6h
+            # nixos-hardware.nixosModules.lenovo-legion-15ach6h
           ];
         };
       };

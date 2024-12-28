@@ -4,5 +4,6 @@
     # UI/UX design
     figma-linux
     gimp-with-plugins
+    krita
   ];
 }

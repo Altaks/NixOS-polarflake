@@ -27,5 +27,8 @@ else
     cp -r ./dotfiles/* $HOME/.dotfiles
 fi
 
+# Deleting existing mimeapps mappings
+sudo rm -r $HOME/.config/gtk-* $HOME/.config/mimeapps.list
+
 # Start the generation switch
-sudo nixos-rebuild switch
+sudo nixos-rebuild switch --upgrade-all

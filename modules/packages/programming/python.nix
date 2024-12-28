@@ -12,6 +12,9 @@
       python-pkgs.flask
       python-pkgs.redis
       python-pkgs.graphviz
+      python-pkgs.pip
+      python-pkgs.virtualenv
     ]))
+    pipx
   ];
 }

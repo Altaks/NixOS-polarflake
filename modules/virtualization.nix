@@ -34,6 +34,7 @@
     qemu_full
     dive
     podman-tui
+    podman-desktop
   ];
 
 }

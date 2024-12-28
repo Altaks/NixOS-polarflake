@@ -4,5 +4,6 @@
     k9s
     kubectl
     kubeshark
+    lens
   ];
 }

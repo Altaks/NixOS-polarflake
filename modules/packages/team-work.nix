@@ -8,6 +8,9 @@
     # Minetest client from team building purposes
     minetestclient
 
+    # Prism Launcher / MultiMC alternative
+    prismlauncher
+
     # One Drive - https://nixos.wiki/wiki/OneDrive
     onedrive
   ];
