@@ -17,7 +17,7 @@
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
-      "altaks" = import ./home-manager/home.nix;
+      "%%%username%%%" = import ./home-manager/home.nix;
     };
   };
 
@@ -40,14 +40,14 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.altaks = {
+  users.users.%%%username%%% = {
     isNormalUser = true;
-    description = "altaks";
+    description = "%%%username%%%";
     extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "adbusers" ];
     packages = with pkgs; [];
   };
 
-  users.extraGroups.vboxusers.members = [ "altaks" ];
+  users.extraGroups.vboxusers.members = [ "%%%username%%%" ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

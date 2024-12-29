@@ -11,6 +11,49 @@ sudo rm -rf /etc/nixos/*
 # Regenerate the Hardware configuration & user related configuration
 sudo nixos-generate-config
 
+# Define current username
+NIX_USERNAME=$USER
+NIX_HOSTNAME=$HOSTNAME
+
+# Querying current folder where git has been cloned (git project can be cloned elsewhere than a "NixOS-polarflake" named folder)
+PROJECT_FOLDER_NAME="${PWD##*/}"
+
+echo -e "Creating custom configuration with following configuration : \n  Username : $USERNAME\n  Hostname : $HOSTNAME"
+
+# Listing every file recursively in the project except the .git folder
+FILES_LIST=$(find | grep -v .git)
+
+for path in $FILES_LIST; do
+
+    # Detect current folder name
+    CURRENT_FOLDER_NAME="${PWD##*/}"
+
+    # Extract file path stem
+    PATH_STEM=$(echo $path | awk '{sub(/^\./, "")}1')
+
+    # Generate the new dist path for the same file
+    NEW_PATH="../${PROJECT_FOLDER_NAME}_dist$PATH_STEM"
+
+    # Extract the file folder path
+    DIR_PATH=$(dirname $NEW_PATH)
+
+    # Make sure the folder exists
+    mkdir -p $DIR_PATH
+
+    # If the file is a .nix file, then change the username and hostname flags during the copy, otherwise simply copy the file
+    if [[ -n $(echo $path | grep .nix) ]]; then
+        cat $path \
+            | awk -v NIX_USERNAME="$NIX_USERNAME" '{sub(/%%%username%%%/, NIX_USERNAME)}1' \
+            | awk -v NIX_HOSTNAME="$NIX_HOSTNAME" '{sub(/%%%hostname%%%/, NIX_HOSTNAME)}1' \
+            > $NEW_PATH
+    else
+        cp $path $NEW_PATH 2> /dev/null
+    fi
+done
+
+# Warp inside the dist folder to continue the installation
+cd ../${PROJECT_FOLDER_NAME}_dist
+
 # Copy every file here in the configuration folder & reapply permissions
 sudo cp -r ./* /etc/nixos/
 sudo chown root:root -R /etc/nixos

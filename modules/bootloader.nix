@@ -9,7 +9,7 @@
       device = "nodev";
       useOSProber = true;
       enableCryptodisk = true;
-      theme = "/home/altaks/.dotfiles/grub-theme";
+      theme = "/home/%%%username%%%/.dotfiles/grub-theme";
       enable = true;
       extraEntries = ''
       menuentry "BIOS / UEFI (Motherboard configuration)" {

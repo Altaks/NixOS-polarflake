@@ -1,7 +1,7 @@
 { inputs, config, lib, pkgs, ... }:
 {
-  home.username = "altaks";
-  home.homeDirectory = "/home/altaks";
+  home.username = "%%%username%%%";
+  home.homeDirectory = "/home/%%%username%%%";
 
   home.stateVersion = "24.11";
 
@@ -74,7 +74,7 @@
       flutter_sdk=$(readlink -f $(which flutter) | awk '{sub(/\/flutter$/,"")}1')
       export PATH="$flutter_sdk:$PATH";
       
-      export ANDROID_HOME="/home/altaks/Android/Sdk";
+      export ANDROID_HOME="/home/%%%username%%%/Android/Sdk";
       export CHROME_EXECUTABLE="$(which chromium)"; 
     '';
   };
@@ -92,12 +92,8 @@
   programs.fzf.enable = true;
 
   home.file = {
-    # ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink /home/tinsuki/.dotfiles/hypr;
-    # ".config/tofi".source = config.lib.file.mkOutOfStoreSymlink /home/tinsuki/.dotfiles/tofi;
-    # ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink /home/tinsuki/.dotfiles/waybar;
-    ".config/fastfetch".source = config.lib.file.mkOutOfStoreSymlink /home/altaks/.dotfiles/fastfetch;
-    ".config/oh-my-posh".source = config.lib.file.mkOutOfStoreSymlink /home/altaks/.dotfiles/oh-my-posh;
-    # ".config/kitty".source = config.lib.file.mkOutOfStoreSymlink /home/tinsuki/.dotfiles/kitty;
+    ".config/fastfetch".source = config.lib.file.mkOutOfStoreSymlink /home/%%%username%%%/.dotfiles/fastfetch;
+    ".config/oh-my-posh".source = config.lib.file.mkOutOfStoreSymlink /home/%%%username%%%/.dotfiles/oh-my-posh;
   };
 
   programs.home-manager.enable=true;

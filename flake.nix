@@ -32,7 +32,7 @@
     in rec
     {
       nixosConfigurations = {
-        hantroxion = nixpkgs.lib.nixosSystem {
+        %%%hostname%%% = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
           };
