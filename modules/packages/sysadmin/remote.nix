@@ -1,7 +1,7 @@
 { inputs, config, lib, pkgs, ... }: { 
 
   environment.systemPackages = with pkgs; [
-    termius
-    filezilla
+    termius    # Termius   - https://termius.com/
+    filezilla  # FileZilla - https://filezilla-project.org/
   ];
 }

@@ -1,5 +1,6 @@
 { inputs, config, lib, pkgs, ... }: { 
 
+  # Install some nerd fonts for pretty characters display
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [

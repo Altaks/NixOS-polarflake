@@ -1,13 +1,13 @@
 { inputs, config, lib, pkgs, ... }: { 
 
   environment.systemPackages = with pkgs; [
-    # Scilab
+    # Scilab - https://www.scilab.org/
     scilab-bin
     
-    # Grapher
+    # ZeGrapher - https://zegrapher.com/en/
     zegrapher
 
-    # Geogebra
+    # Geogebra - https://www.geogebra.org/
     geogebra6
   ];
 }

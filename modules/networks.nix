@@ -1,14 +1,16 @@
 { inputs, config, lib, pkgs, ... }: { 
   
-  networking.hostName = "%%%hostname%%%"; # Define your hostname.
+  # Defines your hostname
+  networking.hostName = "%%%hostname%%%";
   
   # Pick only one of the below networking options.
-  # networking.wireless.enable = true;      # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
+  # Restrict incoming request to HTTP, HTTPS and SSH ports
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 80 443 22 ];
 
+  # Install a WiFi Hotspot utility to use your computer as a repeater
   environment.systemPackages = with pkgs; [
     linux-wifi-hotspot
   ];

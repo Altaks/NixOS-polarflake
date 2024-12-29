@@ -2,11 +2,11 @@
 
   environment.systemPackages = with pkgs; [
     # Nix Health checker
-    nix-health
-    nix-output-monitor
+    nix-health            # Nix Health Checker
+    nix-output-monitor    # NixOS rebuild pretty display 
 
     # Graphical system config tools
-    inputs.nix-software-center.packages.${system}.nix-software-center
-    inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
+    inputs.nix-software-center.packages.${system}.nix-software-center # Snap equivalent for NixOS  - https://github.com/snowfallorg/nix-software-center
+    inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor     # NixOS configuration editor - https://github.com/snowfallorg/nixos-conf-editor
   ];
 }

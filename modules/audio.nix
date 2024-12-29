@@ -5,8 +5,10 @@
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
+    # Compatibility with alsa
     alsa.enable = true;
     alsa.support32Bit = true;
+    # Compatibility with pulseaudio
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     jack.enable = true;

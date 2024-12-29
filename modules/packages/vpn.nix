@@ -2,7 +2,7 @@
 
   environment.systemPackages = with pkgs; [
   
-    # VPN
+    # Proton VPN - https://protonvpn.com/
     protonvpn-gui
     protonvpn-cli
   ];

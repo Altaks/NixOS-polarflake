@@ -3,7 +3,7 @@
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
-  ## Select internationalisation properties.
+  ## Select internationalisation properties - Set to pure french.
   i18n.defaultLocale = "fr_FR.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -17,7 +17,6 @@
     LC_TELEPHONE = "fr_FR.UTF-8";
     LC_TIME = "fr_FR.UTF-8";
   };
-
 
   # Configure keymap in X11
   services.xserver.xkb = {

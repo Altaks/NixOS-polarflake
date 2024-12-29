@@ -1,7 +1,7 @@
 { inputs, config, lib, pkgs, ... }: { 
 
   environment.systemPackages = with pkgs; [
-    # Android development
+    # Android development - https://developer.android.com/
     android-studio
     android-tools
   ];

@@ -1,7 +1,7 @@
 { inputs, config, lib, pkgs, ... }: { 
 
   environment.systemPackages = with pkgs; [
-    inotify-info
-    btop
+    inotify-info   # INotify Info - https://github.com/mikesart/inotify-info
+    btop           # Better Top   - https://github.com/aristocratos/btop
   ];
 }

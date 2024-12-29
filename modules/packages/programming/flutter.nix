@@ -1,7 +1,7 @@
 { inputs, config, lib, pkgs, ... }: { 
 
   environment.systemPackages = with pkgs; [
-    # Flutter & Dart development
+    # Flutter & Dart development - https://flutter.dev/
     flutter
     dart
   ];

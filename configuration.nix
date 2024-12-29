@@ -14,17 +14,13 @@
     ./modules
   ];
 
+  # Define Home Manager configuration entry
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
       "%%%username%%%" = import ./home-manager/home.nix;
     };
   };
-
-  # Use the systemd-boot EFI boot loader.
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
-
   
   # Enable the X11 windowing system.
   services.xserver.enable = true;
@@ -37,7 +33,7 @@
   services.printing.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.%%%username%%% = {

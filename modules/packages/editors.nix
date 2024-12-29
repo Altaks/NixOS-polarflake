@@ -5,9 +5,10 @@
       vim
       nano
 
-      # Zed editor
+      # Zed editor - https://zed.dev/
       inputs.nixpkgs-unstable.legacyPackages."${pkgs.system}".zed-editor
 
+      # VSCodium (Open Source Visual Studio Code) with preinstalled extensions - https://vscodium.com/
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
@@ -54,8 +55,7 @@
         ];
       })
 
-    
-      # Jetbrains Tools
+      # Jetbrains Tools - https://www.jetbrains.com/
       jetbrains.clion                 # C++
       jetbrains.webstorm              # JS TS 
       jetbrains.phpstorm              # PHP
@@ -64,12 +64,12 @@
       jetbrains.idea-ultimate         # Java, Kotlin
       jetbrains.datagrip              # Database viewer/ide
 
-      # Qt Creator
+      # Qt Creator - https://doc.qt.io/qtcreator/creator-overview.html
       qtcreator
       kdePackages.qtbase
       libsForQt5.full
 
-      # Libre Office suite
+      # Libre Office suite - https://www.libreoffice.org/
       libreoffice
   ];
 }

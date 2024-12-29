@@ -1,8 +1,10 @@
 { inputs, config, lib, pkgs, ... }: { 
 
   environment.systemPackages = with pkgs; [
-      # Deno
+      # NodeJS 22 - https://nodejs.org/en
       nodejs_22 
+
+      # Deno - https://deno.com/
       inputs.nixpkgs-unstable.legacyPackages."${pkgs.system}".deno
   ];
 }

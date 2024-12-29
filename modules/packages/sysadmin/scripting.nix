@@ -1,9 +1,9 @@
 { inputs, config, lib, pkgs, ... }: { 
 
   environment.systemPackages = with pkgs; [
-    cron
+    cron          # Cron - https://crontab.guru/
     cronutils
-    go-task
-    just
+    go-task       # Taskfiles - https://taskfile.dev/
+    just          # Justfiles - https://github.com/casey/just
   ];
 }

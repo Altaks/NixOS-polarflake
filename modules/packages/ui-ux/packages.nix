@@ -1,9 +1,9 @@
 { inputs, config, lib, pkgs, ... }: { 
 
+  # UI/UX design
   environment.systemPackages = with pkgs; [
-    # UI/UX design
-    figma-linux
-    gimp-with-plugins
-    krita
+    figma-linux         # Figma - https://www.figma.com/
+    gimp-with-plugins   # GIMP  - https://www.gimp.org/
+    krita               # Krita - https://krita.org/en/
   ];
 }

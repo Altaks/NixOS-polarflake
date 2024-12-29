@@ -1,8 +1,10 @@
 { inputs, config, lib, pkgs, ... }: { 
 
   environment.systemPackages = with pkgs; [
+    # GPU Information viewer - https://github.com/arunsivaramanneo/GPU-Viewer
     gpu-viewer
 
+    # Graphics related tools https://wiki.nixos.org/wiki/Graphics
     glxinfo
     vulkan-tools
     clinfo
@@ -10,6 +12,7 @@
     vdpauinfo
   ];
 
+  # OpenGL configuration - https://nixos.wiki/wiki/OpenGL
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -17,6 +20,7 @@
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  # Nvidia related configuration
   hardware.nvidia = {
 
     # Modesetting is required.

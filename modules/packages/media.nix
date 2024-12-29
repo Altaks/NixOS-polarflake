@@ -2,16 +2,16 @@
 
   environment.systemPackages = with pkgs; [
     # Open any media
-    vlc
+    vlc                          # VLC - https://www.videolan.org/vlc/
     
     # Spotify because i need it
-    spotify
+    spotify                      # Spotify - https://open.spotify.com/
     spotify-tray
 
     # Video recording
-    obs-studio
+    obs-studio                   # OBS Studio - https://obsproject.com/
 
     # Audacity
-    audacity
+    audacity                     # Audacity - https://www.audacityteam.org/
   ];
 }

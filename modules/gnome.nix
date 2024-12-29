@@ -1,5 +1,6 @@
 { inputs, config, pkgs, lib, ... } : {
 
+  # Install Gnome extensions
   environment.systemPackages = with pkgs; [
 
     gnomeExtensions.blur-my-shell

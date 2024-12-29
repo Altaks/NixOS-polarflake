@@ -8,7 +8,10 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = [
+    # Fastfetch - https://github.com/fastfetch-cli/fastfetch
     pkgs.fastfetch
+
+    # Discord w/ Vencord - https://vencord.dev/
     (
       pkgs.discord.override {
         withVencord = true;
@@ -16,11 +19,14 @@
     )
   ];
 
+  # Gnome configuration
   dconf = {
     enable = true;
     settings = {
       "org/gnome/shell" = {
         disable-user-extensions = false; # enables user extensions
+        
+        # Enable installed extensions
         enabled-extensions = [
           pkgs.gnomeExtensions.blur-my-shell.extensionUuid
           pkgs.gnomeExtensions.caffeine.extensionUuid
@@ -37,6 +43,7 @@
         ];
       };
 
+      # Use Dark theme
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-dark";
         clock-show-weekday = true;
@@ -45,9 +52,12 @@
     };
   };
 
+  # Use Bash
   programs.bash.enable = true;
 
   programs.bash = {
+
+    # Define Bash aliases
     shellAliases = {
       l = "ls -alh";
       ll = "ls -l";
@@ -57,30 +67,40 @@
       dcu = "docker compose up";
       dcub = "docker compose up --build";
     };
+
+    # Extra content for ~/.bashrc
     bashrcExtra = ''
+      # Enable OyMyPosh with installede configuration
       eval "$(oh-my-posh init bash --config ~/.dotfiles/oh-my-posh/config.json)"
       
+      # Enable FZF + keybinds + completion
       if command -v fzf-share >/dev/null; then
         source "$(fzf-share)/key-bindings.bash"
         source "$(fzf-share)/completion.bash"
       fi
     
+      # Start fastfetch if the opened terminal is wide enough
       if [[ $(tput lines) -ge 43 && $(tput cols) -ge 92 ]]; then
 	      fastfetch
       fi
 
+      # Export paths
       export LD_LIBRARY_PATH="/run/opengl-driver/lib:/run/opengl-driver-32/lib";
       
+      # Export flutter & flutter related path
       flutter_sdk=$(readlink -f $(which flutter) | awk '{sub(/\/flutter$/,"")}1')
       export PATH="$flutter_sdk:$PATH";
-      
-      export ANDROID_HOME="/home/%%%username%%%/Android/Sdk";
       export CHROME_EXECUTABLE="$(which chromium)"; 
+      
+      # Export Android related paths
+      export ANDROID_HOME="/home/%%%username%%%/Android/Sdk";
     '';
   };
 
+  # Make OhMyPosh integrated w/ bash
   programs.oh-my-posh.enableBashIntegration = true;
 
+  # Make Zoxide available to bash
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
@@ -89,8 +109,10 @@
     ];
   };
 
+  # Make FZF available to bash
   programs.fzf.enable = true;
 
+  # System hardlinks for configurations
   home.file = {
     ".config/fastfetch".source = config.lib.file.mkOutOfStoreSymlink /home/%%%username%%%/.dotfiles/fastfetch;
     ".config/oh-my-posh".source = config.lib.file.mkOutOfStoreSymlink /home/%%%username%%%/.dotfiles/oh-my-posh;
@@ -98,8 +120,8 @@
 
   programs.home-manager.enable=true;
 
+  # Define default apps for opening files
   xdg.mimeApps.enable = true;
-
   xdg.mimeApps.defaultApplications = {
     # Web content
     "text/html" = "zen.desktop";
@@ -334,7 +356,9 @@
 
   };
 
+  # Define Zen Browser as the system default browser
   home.sessionVariables.DEFAULT_BROWSER = "${inputs.zen-browser.packages."${pkgs.system}".default}/bin/zen";
 
+  # Enable Numlock on session enter
   xsession.numlock.enable = true;
 }
