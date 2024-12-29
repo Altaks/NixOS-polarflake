@@ -339,4 +339,6 @@
   };
 
   home.sessionVariables.DEFAULT_BROWSER = "${inputs.zen-browser.packages."${pkgs.system}".default}/bin/zen";
+
+  xsession.numlock.enable = true;
 }
