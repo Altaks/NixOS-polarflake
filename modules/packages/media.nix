@@ -7,5 +7,11 @@
     # Spotify because i need it
     spotify
     spotify-tray
+
+    # Video recording
+    obs-studio
+
+    # Audacity
+    audacity
   ];
 }

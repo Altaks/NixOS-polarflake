@@ -18,6 +18,9 @@ NIX_HOSTNAME=$HOSTNAME
 # Querying current folder where git has been cloned (git project can be cloned elsewhere than a "NixOS-polarflake" named folder)
 PROJECT_FOLDER_NAME="${PWD##*/}"
 
+# Clear existing dist folder and hide error of there are any
+sudo rm -rf ../${PROJECT_FOLDER_NAME}_dist 2> /dev/null
+
 echo -e "Creating custom configuration with following configuration : \n  Username : $USERNAME\n  Hostname : $HOSTNAME"
 
 # Listing every file recursively in the project except the .git folder

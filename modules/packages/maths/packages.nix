@@ -6,5 +6,8 @@
     
     # Grapher
     zegrapher
+
+    # Geogebra
+    geogebra6
   ];
 }

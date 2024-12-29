@@ -43,7 +43,7 @@
   users.users.%%%username%%% = {
     isNormalUser = true;
     description = "%%%username%%%";
-    extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "adbusers" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "kvm" "adbusers" "qemu-libvirtd" "libvirtd" ];
     packages = with pkgs; [];
   };
 

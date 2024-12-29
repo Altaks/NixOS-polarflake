@@ -66,6 +66,7 @@
 
       # Qt Creator
       qtcreator
+      kdePackages.qtbase
       libsForQt5.full
 
       # Libre Office suite
