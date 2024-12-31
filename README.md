@@ -1,4 +1,4 @@
-# Polarflake
+# :snowflake: Polarflake 
 
 Polarflake is a NixOS configuration dedicated to computer learning. This configuration was created specifically for the IUT in La Rochelle, France. 
 
@@ -10,26 +10,26 @@ The aim of this NixOS configuration is to provide new students with a Linux conf
 
 NixOS is an operating system based on the [Nix](https://github.com/NixOS/nix) package manager, it provides a way for a user to describe it's system's configuration declarativly and avoid long hours of diving into obscure linux commands to copy a Linux configuration from one computer to another
 
-More information about this here : [Nix & NixOS](https://nixos.org/)
+More information about this here : [:snowflake: Nix & NixOS :snowflake:](https://nixos.org/)
 
 ## Configuration contents
 
 This NixOS configuration provides to following content to the user's system :
 
-- Programming tools for C, C++, Java, JavaScript, TypeScript, Flutter/Dart, Rust, Swift, Python, associated debugging tools & Jetbrains IDEs
-- Math related tools (Scilab, Geogebra 6, ZeGrapher)
-- SysAdmin utilities (compression, Network sniffers, partitions managers, SSH clients, Taskfiles, Justfiles, Git, GitHub CLI, etc...)
-- Developer UI/UX software (Figma, GIMP, Krita)
-- Bootloader configuration (GRUB 2, Grub themes, Encrypted partitions support)
-- Nerd fonts
-- Network, Firewall configuration, Linux Hotspot
-- Virtualization systems (Docker, Podman, VirtualBox, Vagrant, Libvirtd)
-- Gnome configuration w/ extensions
-- Terminal config & utils (OhMyPosh, FZF, Fastfetch & zoxide)
-- Team work tools (Teams, Slack, Discord, etc...)
+- :hammer_and_wrench: Programming tools for C, C++, Java, JavaScript, TypeScript, Flutter/Dart, Rust, Swift, Python, associated debugging tools & Jetbrains IDEs
+- :chart_with_upwards_trend: Math related tools (Scilab, Geogebra 6, ZeGrapher)
+- :toolbox: SysAdmin utilities (compression, Network sniffers, partitions managers, SSH clients, Taskfiles, Justfiles, Git, GitHub CLI, etc...)
+- :paintbrush: Developer UI/UX software (Figma, GIMP, Krita)
+- :rocket: Bootloader configuration (GRUB 2, Grub themes, Encrypted partitions support)
+- :space_invader: Nerd fonts
+- :shield: Network, Firewall configuration, Linux Hotspot
+- :electric_plug: Virtualization systems (Docker, Podman, VirtualBox, Vagrant, Libvirtd)
+- :desktop_computer: Gnome configuration w/ extensions
+- :floppy_disk: Terminal config & utils (OhMyPosh, FZF, Fastfetch & zoxide)
+- :bust_in_silhouette: Team work tools (Teams, Slack, Discord, etc...)
 
 > [!TIP]
-> This configuration is set to apply the `fr_FR` configuration both for the keyboard & the system's language. You can change it in the `modules/locales.nix` file before installing the configuration.
+> This configuration is set to apply the :fr: `fr_FR` configuration both for the keyboard & the system's language. You can change it in the `modules/locales.nix` file before installing the configuration.
 
 > [!WARNING]  
 > This configuration has been created for laptops with an Nvidia GeForce RTX card, for AMD graphics cards users, please refer to the [NixOS Wiki page](https://nixos.wiki/wiki/AMD_GPU). Feel free to provide a PR for a `graphics/amd` git branch created from the `main` branch.
@@ -47,15 +47,15 @@ nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd Ni
 ## Sources
 
 Official sources : 
-- NixOS packages registry : https://search.nixos.org/packages
-- NixOS options registry : https://search.nixos.org/options
-- NixOS Wiki : https://nixos.wiki/
+- :snowflake: NixOS packages registry : https://search.nixos.org/packages
+- :snowflake: NixOS options registry : https://search.nixos.org/options
+- :snowflake: NixOS Wiki : https://nixos.wiki/
 
 Community managed sources : 
-- HomeManager options registry : https://home-manager-options.extranix.com/?query=&release=release-24.11
-- NixOS community hardware config collection : https://github.com/NixOS/nixos-hardware 
+- :house: HomeManager options registry : https://home-manager-options.extranix.com/?query=&release=release-24.11
+- :snowflake: NixOS community hardware config collection : https://github.com/NixOS/nixos-hardware 
 
-## Contribution
+## Contributions
 
 ![Alt](https://repobeats.axiom.co/api/embed/6bda1571fb29ed10c7c7649dc5850f8998ade80d.svg "Repobeats analytics image")
 
