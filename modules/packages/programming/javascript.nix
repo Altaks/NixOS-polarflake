@@ -6,5 +6,8 @@
 
       # Deno - https://deno.com/
       inputs.nixpkgs-unstable.legacyPackages."${pkgs.system}".deno
+
+      # TypeScript - https://www.typescriptlang.org/
+      typescript
   ];
 }

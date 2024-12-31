@@ -361,4 +361,10 @@
 
   # Enable Numlock on session enter
   xsession.numlock.enable = true;
+
+  # Enable additional .desktop entry for yEd.
+  xdg.desktopEntries.yed = {
+    name = "yEd";
+    exec = "${pkgs.yed}/bin/yed";
+  };
 }

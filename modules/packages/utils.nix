@@ -20,5 +20,8 @@
     forge-sparks                                                   # Get git forges notifications when logged in
     elastic                                                        # Generate animations
     collision                                                      # Check hashes
+
+    yed                                                            # Graph maker - https://www.yworks.com/products/yed
+    tldr                                                           # TLDR pages  - https://tldr.sh/
   ];
 }

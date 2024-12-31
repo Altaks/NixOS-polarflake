@@ -17,6 +17,11 @@
       python-pkgs.pip
       python-pkgs.virtualenv
     ]))
+
+    # PipX - https://pipx.pypa.io/latest/installation/
     pipx
+
+    # Anaconda Conda package manager - https://anaconda.org/anaconda/conda
+    conda
   ];
 }

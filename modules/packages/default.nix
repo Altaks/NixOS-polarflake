@@ -16,6 +16,7 @@
     ./utils.nix
     ./vpn.nix
     ./web.nix
+    ./xdg.nix
     ./yubikey.nix
   ];
 
