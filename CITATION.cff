@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this configuration, please cite it as below."
+authors:
+  - name: Altaks
+    orcid: https://orcid.org/0009-0001-6791-4435
+title: "NixOS Polarflake"
+version: 1.0.0
+date-released: 2024-12-31
+url: https://github.com/tauri-apps/https://github.com/Altaks/NixOS-polarflake
