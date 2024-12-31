@@ -102,7 +102,7 @@ Describe the potential damage or impact if the vulnerability is exploited.
 ## 6. References
 
 - [NixOS Security Guidelines](https://nixos.org/nixos/manual/#sec-security)
-- [NixOS GitHub Repository](https://github.com/username/NixOS-Polarflake)
+- [NixOS GitHub Repository](https://github.com/Altaks/NixOS-Polarflake)
 - [CVE-XXXX-XXXX (Example CVE for similar issue)](https://cve.mitre.org)
 
 ---
