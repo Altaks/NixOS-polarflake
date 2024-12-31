@@ -18,15 +18,15 @@ This NixOS configuration provides to following content to the user's system :
 
 - Programming tools for C, C++, Java, JavaScript, TypeScript, Flutter/Dart, Rust, Swift, Python, associated debugging tools & Jetbrains IDEs
 - Math related tools (Scilab, Geogebra 6, ZeGrapher)
-- SysAdmin utilities
-- Developer UI/UX software 
-- Bootloader configuration
+- SysAdmin utilities (compression, Network sniffers, partitions managers, SSH clients, Taskfiles, Justfiles, Git, GitHub CLI, etc...)
+- Developer UI/UX software (Figma, GIMP, Krita)
+- Bootloader configuration (GRUB 2, Grub themes, Encrypted partitions support)
 - Nerd fonts
-- Network, Firewall configuration
+- Network, Firewall configuration, Linux Hotspot
 - Virtualization systems (Docker, Podman, VirtualBox, Vagrant, Libvirtd)
 - Gnome configuration w/ extensions
-- Terminal configuration
-- Team work tools
+- Terminal config & utils (OhMyPosh, FZF, Fastfetch & zoxide)
+- Team work tools (Teams, Slack, Discord, etc...)
 
 > [!TIP]
 > This configuration is set to apply the `fr_FR` configuration both for the keyboard & the system's language. You can change it in the `modules/locales.nix` file before installing the configuration.
