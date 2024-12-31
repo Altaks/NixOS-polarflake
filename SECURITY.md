@@ -36,7 +36,7 @@ Please use the following security vulnerability report when creating such report
 ### 2.1 Impacted Components
 - **NixOS Configuration**: `configuration.nix`
 - **Affected Services**: [e.g., NGINX, SSH, etc.]
-- **Configuration Files**: [List specific files affected, e.g., `nixos/polarflake/config.nix`, `nixos/services/firewall.nix`]
+- **Configuration Files**: [List specific files affected, e.g., `modules/bootloader.nix`, `modules/xdg.nix`]
 
 ### 2.2 Vulnerable Configuration
 Provide an example of the vulnerable configuration, highlighting the issue.
