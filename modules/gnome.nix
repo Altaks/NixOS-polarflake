@@ -16,10 +16,14 @@
     gnomeExtensions.customize-clock-on-lock-screen
     gnomeExtensions.unlock-dialog-background
     gnomeExtensions.extension-list
+    gnomeExtensions.appindicator
     gnome-tweaks
     gnome-shell-extensions
     gnome-extension-manager
-    gnome-extensions-cli
+    gnome-extensions-cli    
   ];
+
+  # Make sure Gnome keeps the settings between relogins/reboots
+  services.udev.packages = with pkgs; [ gnome-settings-daemon ];
 
 }

@@ -40,6 +40,7 @@
           pkgs.gnomeExtensions.customize-clock-on-lock-screen.extensionUuid
           pkgs.gnomeExtensions.unlock-dialog-background.extensionUuid
           pkgs.gnomeExtensions.extension-list.extensionUuid
+          pkgs.gnomeExtensions.appindicator.extensionUuid
         ];
       };
 
