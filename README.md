@@ -29,7 +29,7 @@ This NixOS configuration provides to following content to the user's system :
 - :bust_in_silhouette: Team work tools (Teams, Slack, Discord, etc...)
 
 > [!TIP]
-> This configuration is set to apply the :fr: `fr_FR` configuration both for the keyboard & the system's language. You can change it in the `modules/locales.nix` file before installing the configuration.
+> This configuration is set to apply the :fr: `fr_FR` configuration both for the keyboard & the system's language. You can change it in the [`modules/locales.nix`](/modules/locales.nix) file before installing the configuration.
 
 > [!WARNING]  
 > This configuration has been created for laptops with an Nvidia GeForce RTX card, for AMD graphics cards users, please refer to the [NixOS Wiki page](https://nixos.wiki/wiki/AMD_GPU). Feel free to provide a PR for a `graphics/amd` git branch created from the `main` branch.
