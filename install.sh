@@ -1,14 +1,16 @@
 #!/bin/sh
 
 # Backup of existing configuration with timestamp
-echo "Backing up existing generation configuration files... "
+echo "Backing up existing generation configuration files..."
 mkdir -p /etc/nixos_backups/
-sudo tar -Jcvf /etc/nixos_backups/backup_$(date +%Y%m%d_%H%M%S).tar.xz /etc/nixos/
+sudo tar -Jcvf /etc/nixos_backups/backup_$(date +%Y%m%d_%H%M%S).tar.xz /etc/nixos/ 2> /dev/null
 
 # Clearing the NixOS configuration folder
+echo "Deleting current configuration from the configuration folder..."
 sudo rm -rf /etc/nixos/*
 
 # Regenerate the Hardware configuration & user related configuration
+echo "Regenerate systems hardware configuration"
 sudo nixos-generate-config
 
 # Define current username
@@ -19,6 +21,7 @@ NIX_HOSTNAME=$HOSTNAME
 PROJECT_FOLDER_NAME="${PWD##*/}"
 
 # Clear existing dist folder and hide error of there are any
+echo "Making sure the dist folder is empty"
 sudo rm -rf ../${PROJECT_FOLDER_NAME}_dist 2> /dev/null
 
 echo -e "Creating custom configuration with following configuration : \n  Username : $USERNAME\n  Hostname : $HOSTNAME"
@@ -58,23 +61,30 @@ done
 cd ../${PROJECT_FOLDER_NAME}_dist
 
 # Copy every file here in the configuration folder & reapply permissions
+echo "Copying generated configuration to /etc/nixos/ folder"
 sudo cp -r ./* /etc/nixos/
 sudo chown root:root -R /etc/nixos
 
 # If configuration files exist already, back them up, otherwise just copy them
+echo ".dotfiles phase"
 if [[ ! -d $HOME/.dotfiles ]]; then
+    echo "Creating & copying dotfiles to folder"
     mkdir -p $HOME/.dotfiles
     cp -r ./dotfiles/* $HOME/.dotfiles/
 else
+    echo "Creating backup of the ~/.dotfiles folder"
     mkdir -p $HOME/.dotfiles_backups
     sudo tar -Jcvf $HOME/.dotfiles_backups/backup_$(date +%Y%m%d_%H%M%S).tar.xz $HOME/.dotfiles/
     rm -rf $HOME/.dotfiles
+    echo "Copying the new dotfiles to the ~/.dotfiles folder"
     mkdir -p $HOME/.dotfiles
     cp -r ./dotfiles/* $HOME/.dotfiles
 fi
 
 # Deleting existing mimeapps mappings
+echo "Cleaning previous configuration misc files"
 sudo rm -r $HOME/.config/gtk-* $HOME/.config/mimeapps.list
 
 # Start the generation switch
+echo "Switching current system's configuration."
 sudo nixos-rebuild switch --upgrade-all
