@@ -45,7 +45,7 @@ nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd Ni
 ```
 
 > [!CAUTION]
-> Once the script ends, you've installed the configuration, the last thing you need to do is to **reboot** your system.
+> Once the script ends, you've installed the configuration, the last thing you need to do is to **reboot** your system, using the `sudo reboot now` or the UI.
 
 > [!IMPORTANT]
 >
