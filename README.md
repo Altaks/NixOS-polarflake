@@ -28,10 +28,10 @@ This NixOS configuration provides to following content to the user's system :
 - :floppy_disk: Terminal config & utils (OhMyPosh, FZF, Fastfetch & zoxide)
 - :bust_in_silhouette: Team work tools (Teams, Slack, Discord, etc...)
 
-> [!TIP]
+> [!TIP] Locales
 > This configuration is set to apply the :fr: `fr_FR` configuration both for the keyboard & the system's language. You can change it in the [`modules/locales.nix`](/modules/locales.nix) file before installing the configuration.
 
-> [!WARNING]  
+> [!WARNING] Hardware configuration [only for Non-Nvidia GPU users]
 > This configuration has been created for laptops with an Nvidia GeForce RTX card, for AMD graphics cards users, please refer to the [NixOS Wiki page](https://nixos.wiki/wiki/AMD_GPU). Feel free to provide a PR for a `graphics/amd` git branch created from the `main` branch.
 >
 > You can check whether or not OpenGL works normally by launching Minetest/Minecraft (Prism Launcher) or by using the `glxinfo` tool
@@ -44,10 +44,10 @@ To install this configuration, you first need to [install NixOS yourself](https:
 nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd NixOS-polarflake && ./install.sh 
 ```
 
-> [!CAUTION]
+> [!CAUTION] Post-installation action required
 > Once the script ends, you've installed the configuration, the last thing you need to do is to **reboot** your system, using the `sudo reboot now` command or the UI.
 
-> [!IMPORTANT]
+> [!IMPORTANT] Updates & Remove previous generations
 >
 > #### Updates :
 > Once you've installed the configuration, you won't get updates without re-executing the `./install.sh` script. The system will create a new generation providing newer versions of the software and use them instead of the previously installed versions.
@@ -66,6 +66,39 @@ nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd Ni
 > - Modifying this project [`configuration.nix`](./configuration.nix) and adding the following : `nix.settings.auto-optimise-store = true;` to the file which will make NixOS optimize the store during the system rebuild. Then reinstall the configuration and reboot. [*(Source)*](https://nixos.wiki/wiki/Storage_optimization)
 >
 > - Modifying this project [`configuration.nix`](./configuration.nix) and adding the following `nix.optimise.automatic = true;` which will make NixOS optimize the Nix store during uptime. Then reinstall the configuration and reboot. [*(Source)*](https://nixos.wiki/wiki/Storage_optimization)
+
+> [!IMPORTANT] Backups
+> #### Using backups
+> 
+> This installation scripts generates backups of generations between switches, to avoid the pain of changing something and it wrecks the whole configuration.
+> In case you've changed something in the configuration and failed to reinstall it, you can reinstall a backup using the following method : 
+>
+> Backup of the system configuration :
+> ```sh
+> # Warp into the system root folder
+> cd /
+> 
+> # Extracting the configuration backup, since the installation script keeps the absolute paths when creating backups. 
+> tar -Jxvf /etc/nixos_backups/backup_<timestamp>.tar.xz
+> ```
+> Backup of the custom software configurations : 
+>
+> ```sh
+> # Warp into the system root folder
+> cd /
+> 
+> # Extracting the softawre configurations backup, since the installation script keeps the absolute paths when creating backups
+> tar -Jxvf /etc/.dotfiles_backups/backup_<timestamp>.tar.xz
+> ```
+>
+> *The backup names use the pattern : `backup_YYYYMMDD_HHMMSS.tar.xz` so a backup named `backup_20241231_002816.tar.xz` would have been created the 31th of December 2024 at 00:28:16 in the 24 hours format.*
+>
+> #### Removing previous configuration backups : 
+>
+> If you want to delete the backups whose been generated, in order to earn some more storage space, you only need to clear the following folders : 
+> 
+> - Custom configurations backups : `~/.dotfiles_backups/` using `sudo rm -rf ~/.dotfiles_backups/`
+> - System configurations backups : `/etc/nixos_backups/` using `/etc/nixos_backups/`
 
 ## Sources
 
