@@ -77,7 +77,10 @@ nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd Ni
 > ```sh
 > # Warp into the system root folder
 > cd /
-> 
+>
+> # Clear the NixOS configuration folder before installing the backup 
+> sudo rm -rf /etc/nixos/
+>
 > # Extracting the configuration backup, since the installation script keeps the absolute paths when creating backups. 
 > tar -Jxvf /etc/nixos_backups/backup_<timestamp>.tar.xz
 > ```
@@ -87,11 +90,21 @@ nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd Ni
 > # Warp into the system root folder
 > cd /
 > 
+> # Clear the system configurations folder before installing the backup 
+> sudo rm -rf /etc/nixos/
+>
 > # Extracting the softawre configurations backup, since the installation script keeps the absolute paths when creating backups
 > tar -Jxvf /etc/.dotfiles_backups/backup_<timestamp>.tar.xz
 > ```
 >
 > *The backup names use the pattern : `backup_YYYYMMDD_HHMMSS.tar.xz` so a backup named `backup_20241231_002816.tar.xz` would have been created the 31th of December 2024 at 00:28:16 in the 24 hours format.*
+> 
+> Switching the system on the backup : 
+> ```sh
+> sudo nixos-rebuild switch --upgrade-all
+> ```
+>
+> Once this command is finished, **reboot** using the `sudo reboot now` command or the system's UI.
 >
 > #### Removing previous configuration backups : 
 >
