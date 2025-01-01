@@ -82,7 +82,7 @@ nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd Ni
 > sudo rm -rf /etc/nixos/
 >
 > # Extracting the configuration backup, since the installation script keeps the absolute paths when creating backups. 
-> tar -Jxvf /etc/nixos_backups/backup_<timestamp>.tar.xz
+> sudo tar -Jxvf /etc/nixos_backups/backup_<timestamp>.tar.xz
 > ```
 > Backup of the custom software configurations : 
 >
@@ -94,7 +94,7 @@ nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd Ni
 > sudo rm -rf /etc/nixos/
 >
 > # Extracting the softawre configurations backup, since the installation script keeps the absolute paths when creating backups
-> tar -Jxvf /etc/.dotfiles_backups/backup_<timestamp>.tar.xz
+> sudo tar -Jxvf /etc/.dotfiles_backups/backup_<timestamp>.tar.xz
 > ```
 >
 > *The backup names use the pattern : `backup_YYYYMMDD_HHMMSS.tar.xz` so a backup named `backup_20241231_002816.tar.xz` would have been created the 31th of December 2024 at 00:28:16 in the 24 hours format.*
