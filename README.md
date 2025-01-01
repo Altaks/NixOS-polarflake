@@ -45,12 +45,14 @@ nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd Ni
 ```
 
 > [!CAUTION]
-> Once the script ends, you've installed the configuration, the last thing you need to do is to **reboot** your system, using the `sudo reboot now` or the UI.
+> Once the script ends, you've installed the configuration, the last thing you need to do is to **reboot** your system, using the `sudo reboot now` command or the UI.
 
 > [!IMPORTANT]
 >
 > #### Updates :
 > Once you've installed the configuration, you won't get updates without re-executing the `./install.sh` script. The system will create a new generation providing newer versions of the software and use them instead of the previously installed versions.
+>
+> If you want the updated version of this configuration and not only the software within it, simply `git pull` in this folder and you'll be able to fetch the new configuration if there's any new content
 >
 > #### Removing previous generations : 
 > During a system rebuild, NixOS keeps the old configuration in a generation, that stays on your PC until you tell the OS to remove the fallback generations. These generation take up a lot of storage capacity, because there are copies/duplicates of the same software libraries etc...
@@ -61,9 +63,9 @@ nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd Ni
 >
 > - The next most used way is to use the `nix-store --optimise` command, which will create internal symlinks in the `/nix/store` folder, that stores every software installed on your system. It removes duplicates and keeps only one instance of a software version. [*(Source)*](https://releases.nixos.org/nix/nix-2.22.3/manual/command-ref/nix-store/optimise.html)
 >
-> - Modifying the project [`configuration.nix`](./configuration.nix) and adding the following : `nix.settings.auto-optimise-store = true;` to the file which will make NixOS optimize the store during the system rebuild. [*(Source)*](https://nixos.wiki/wiki/Storage_optimization)
+> - Modifying this project [`configuration.nix`](./configuration.nix) and adding the following : `nix.settings.auto-optimise-store = true;` to the file which will make NixOS optimize the store during the system rebuild. Then reinstall the configuration and reboot. [*(Source)*](https://nixos.wiki/wiki/Storage_optimization)
 >
-> - Modifying the project [`configuration.nix`](./configuration.nix) and adding the following `nix.optimise.automatic = true;` which will make NixOS optimize the Nix store during uptime. [*(Source)*](https://nixos.wiki/wiki/Storage_optimization)
+> - Modifying this project [`configuration.nix`](./configuration.nix) and adding the following `nix.optimise.automatic = true;` which will make NixOS optimize the Nix store during uptime. Then reinstall the configuration and reboot. [*(Source)*](https://nixos.wiki/wiki/Storage_optimization)
 
 ## Sources
 
