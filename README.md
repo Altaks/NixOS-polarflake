@@ -28,10 +28,10 @@ This NixOS configuration provides to following content to the user's system :
 - :floppy_disk: Terminal config & utils (OhMyPosh, FZF, Fastfetch & zoxide)
 - :bust_in_silhouette: Team work tools (Teams, Slack, Discord, etc...)
 
-> [!TIP] Locales
+> [!TIP]
 > This configuration is set to apply the :fr: `fr_FR` configuration both for the keyboard & the system's language. You can change it in the [`modules/locales.nix`](/modules/locales.nix) file before installing the configuration.
 
-> [!WARNING] Hardware configuration [only for Non-Nvidia GPU users]
+> [!WARNING]
 > This configuration has been created for laptops with an Nvidia GeForce RTX card, for AMD graphics cards users, please refer to the [NixOS Wiki page](https://nixos.wiki/wiki/AMD_GPU). Feel free to provide a PR for a `graphics/amd` git branch created from the `main` branch.
 >
 > You can check whether or not OpenGL works normally by launching Minetest/Minecraft (Prism Launcher) or by using the `glxinfo` tool
@@ -44,10 +44,10 @@ To install this configuration, you first need to [install NixOS yourself](https:
 nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd NixOS-polarflake && ./install.sh 
 ```
 
-> [!CAUTION] Post-installation action required
+> [!CAUTION]
 > Once the script ends, you've installed the configuration, the last thing you need to do is to **reboot** your system, using the `sudo reboot now` command or the UI.
 
-> [!IMPORTANT] Updates & Remove previous generations
+> [!IMPORTANT]
 >
 > #### Updates :
 > Once you've installed the configuration, you won't get updates without re-executing the `./install.sh` script. The system will create a new generation providing newer versions of the software and use them instead of the previously installed versions.
@@ -67,7 +67,7 @@ nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd Ni
 >
 > - Modifying this project [`configuration.nix`](./configuration.nix) and adding the following `nix.optimise.automatic = true;` which will make NixOS optimize the Nix store during uptime. Then reinstall the configuration and reboot. [*(Source)*](https://nixos.wiki/wiki/Storage_optimization)
 
-> [!IMPORTANT] Backups
+> [!IMPORTANT]
 > #### Using backups
 > 
 > This installation scripts generates backups of generations between switches, to avoid the pain of changing something and it wrecks the whole configuration.
