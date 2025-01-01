@@ -97,8 +97,8 @@ nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd Ni
 >
 > If you want to delete the backups whose been generated, in order to earn some more storage space, you only need to clear the following folders : 
 > 
+> - System configurations backups : `/etc/nixos_backups/` using `sudo rm -rf /etc/nixos_backups/`
 > - Custom configurations backups : `~/.dotfiles_backups/` using `sudo rm -rf ~/.dotfiles_backups/`
-> - System configurations backups : `/etc/nixos_backups/` using `/etc/nixos_backups/`
 
 ## Sources
 
