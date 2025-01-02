@@ -190,6 +190,17 @@
     "x-scheme-handler/about" = "zen.desktop";
     "x-scheme-handler/unknown" = "zen.desktop";
 
+    # Images & GIFs
+    "image/avif" = "loupe.desktop";
+    "image/bmp" = "loupe.desktop";
+    "image/gif" = "loupe.desktop";
+    "image/vnd.microsoft.icon" = "loupe.desktop";
+    "image/jpeg" = "loupe.desktop";
+    "image/jpg" = "loupe.desktop";
+    "image/png" = "loupe.desktop";
+    "image/svg" = "loupe.desktop";
+    "image/webp" = "loupe.desktop";
+
     # Ogg Vorbis and Theora (Xiph family)
     "application/ogg" = "vlc.desktop";
     "application/x-ogg" = "vlc.desktop";
