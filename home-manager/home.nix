@@ -41,6 +41,8 @@
           pkgs.gnomeExtensions.unlock-dialog-background.extensionUuid
           pkgs.gnomeExtensions.extension-list.extensionUuid
           pkgs.gnomeExtensions.appindicator.extensionUuid
+          pkgs.gnomeExtensions.dash-to-panel.extensionUuid
+          pkgs.gnomeExtensions.quick-settings-audio-panel.extensionUuid
         ];
       };
 
@@ -49,14 +51,71 @@
         color-scheme = "prefer-dark";
         clock-show-weekday = true;
       };
-  
+
+      # Dash to panel configuration
+      "org/gnome/shell/extensions/dash-to-panel" = {
+        appicon-margin = 8;
+        appicon-padding = 4;
+        available-monitors = [ 0 ];
+        dot-color-dominant = true;
+        dot-color-override = false;
+        dot-position = "BOTTOM";
+        dot-style-unfocused = "DOTS";
+        focus-highlight-dominant = true;
+        focus-highlight-opacity = 20;
+        group-apps = true;
+        hotkeys-overlay-combo = "TEMPORARILY";
+        leftbox-padding = -1;
+        panel-anchors = ''
+          {"0":"MIDDLE"}
+        '';
+        panel-element-positions = ''
+          {"0":[{"element":"showAppsButton","visible":true,"position":"stackedTL"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":true,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":true,"position":"stackedBR"},{"element":"rightBox","visible":true,"position":"stackedBR"},{"element":"dateMenu","visible":false,"position":"stackedBR"},{"element":"systemMenu","visible":false,"position":"stackedBR"},{"element":"desktopButton","visible":true,"position":"stackedBR"}]}
+        '';
+        panel-lengths = ''
+          {"0":100}
+        '';
+        panel-sizes = ''
+          {"0":40}
+        '';
+        primary-monitor = 0;
+        secondarymenu-contains-showdetails = true;
+        show-favorites-all-monitors = true;
+        show-showdesktop-delay = 500;
+        show-showdesktop-hover = true;
+        status-icon-padding = -1;
+        stockgs-force-hotcorner = false;
+        stockgs-keep-dash = false;
+        stockgs-keep-top-panel = true;
+        stockgs-panelbtn-click-only = false;
+        trans-use-custom-bg = false;
+        trans-use-custom-opacity = true;
+        trans-use-dynamic-opacity = false;
+        tray-padding = -1;
+        window-preview-title-position = "TOP";
+      };
+
+      # Vitals extension configuration
+      "org/gnome/shell/extensions/vitals" = {
+        hide-icons = false;
+        hide-zeros = true;
+        hot-sensors = [ "_processor_usage_" "_memory_allocated_" "_gpu#1_utilization_" "__network-rx_max__" "__network-tx_max__" "_network_public_ip_" "__temperature_avg__" ];
+        icon-style = 1;
+        include-static-gpu-info = true;
+        include-static-info = true;
+        menu-centered = false;
+        position-in-panel = 0;
+        show-battery = true;
+        show-gpu = true;
+        use-higher-precision = true;
+      };
     };
   };
 
-  # Use Bash
-  programs.bash.enable = true;
-
   programs.bash = {
+
+    # Use bash
+    enable = true;
 
     # Define Bash aliases
     shellAliases = {

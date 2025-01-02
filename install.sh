@@ -2,7 +2,7 @@
 
 # Backup of existing configuration with timestamp
 echo "Backing up existing generation configuration files..."
-mkdir -p /etc/nixos_backups/
+sudo mkdir -p /etc/nixos_backups/
 sudo tar -Jcvf /etc/nixos_backups/backup_$(date +%Y%m%d_%H%M%S).tar.xz /etc/nixos/ 2> /dev/null
 
 # Clearing the NixOS configuration folder
