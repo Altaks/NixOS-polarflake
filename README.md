@@ -38,14 +38,33 @@ This NixOS configuration provides to following content to the user's system :
 
 ## Installation
 
-To install this configuration, you first need to [install NixOS yourself](https://nixos.org/download/#nixos-iso), then install this configuration using a simple command : 
+To install this configuration, you first need to [install NixOS yourself](https://nixos.org/download/#nixos-iso)
+
+After that, you will need Git to clone the configuration easily. You can temporarily install it using the following command : 
+```sh
+nix-shell -p git
+```
+
+Then, within the freshly created shell, start installing this configuration using these three commands : 
 
 ```sh
-nix run nixpkgs#git -- clone https://github.com/Altaks/NixOS-polarflake && cd NixOS-polarflake && ./install.sh 
+# Clone the configuration on your machine
+git clone https://github.com/Altaks/NixOS-polarflake
+
+# Warp into the configuration folder
+cd NixOS-polarflake
+
+# Install the configuration
+# This will ask for sudo mode access. 
+# Use Ctrl-Z to cancel the installation.
+# If you used Ctrl-Z during the generation build/switch phase, you might encounter bugs/crashes/corrupted files.
+./install.sh
 ```
 
 > [!CAUTION]
 > Once the script ends, you've installed the configuration, the last thing you need to do is to **reboot** your system, using the `sudo reboot now` command or the UI.
+>
+> Upon rebooting your system, make sure your new first boot entry in your BIOS/UEFI is set on `NixOS boot` (which corresponds to GRUB) and not `Linux Boot Manager` (which corresponds to system-boot, the default installed bootloader which won't boot onto the right configuration)
 
 > [!IMPORTANT]
 >
