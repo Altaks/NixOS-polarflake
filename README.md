@@ -56,12 +56,13 @@ cd NixOS-polarflake
 
 # Install the configuration
 # This will ask for sudo mode access. 
-# Use Ctrl-Z to cancel the installation.
-# If you used Ctrl-Z during the generation build/switch phase, you might encounter bugs/crashes/corrupted files.
 ./install.sh
 ```
 
 > [!CAUTION]
+> Use <kbd>Ctrl</kbd> + <kbd>Z</kbd> to cancel the installation.
+> If you stopped the script during the generation build/switch phase, you might encounter bugs/crashes/corrupted files.
+> 
 > Once the script ends, you've installed the configuration, the last thing you need to do is to **reboot** your system, using the `sudo reboot now` command or the UI.
 >
 > Upon rebooting your system, make sure your new first boot entry in your BIOS/UEFI is set on `NixOS boot` (which corresponds to GRUB) and not `Linux Boot Manager` (which corresponds to system-boot, the default installed bootloader which won't boot onto the right configuration)
