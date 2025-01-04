@@ -6,6 +6,7 @@
     ghex
     enter-tex
     setzer
+    texliveSmall
     gnome-graphs
 
     errands                                                        # Post-its
