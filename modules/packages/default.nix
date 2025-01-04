@@ -1,11 +1,12 @@
 { config, pkgs, lib, ... } : {
 
   imports = [
-    ./programming
-    ./ui-ux
-    ./sysadmin
     ./devops
     ./maths
+    ./programming
+    ./security
+    ./sysadmin
+    ./ui-ux
 
     ./editors.nix
     ./graphics.nix
@@ -14,7 +15,6 @@
     ./notes.nix
     ./team-work.nix
     ./utils.nix
-    ./vpn.nix
     ./web.nix
     ./xdg.nix
     ./yubikey.nix

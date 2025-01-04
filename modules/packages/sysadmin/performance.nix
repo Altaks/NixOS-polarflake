@@ -8,5 +8,6 @@
     sysbench   # System performance - https://github.com/akopytov/sysbench
     glmark2    # OpenGL benchmark   - https://github.com/glmark2/glmark2
     stress-ng  # Make your PC cry.  - https://github.com/ColinIanKing/stress-ng
+    sysprof    # System wide profiler - https://wiki.gnome.org/Apps/Sysprof
   ];
 }

@@ -5,6 +5,7 @@
     eog
     ghex
     enter-tex
+    setzer
     gnome-graphs
 
     errands                                                        # Post-its

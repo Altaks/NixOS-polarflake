@@ -1,6 +1,7 @@
 { config, pkgs, lib, ... } : {
 
   imports = [
+    ./backups.nix
     ./compression.nix
     ./flashing.nix
     ./network-utils.nix
