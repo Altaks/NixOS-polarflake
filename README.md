@@ -32,9 +32,53 @@ This NixOS configuration provides to following content to the user's system :
 > This configuration is set to apply the :fr: `fr_FR` configuration both for the keyboard & the system's language. You can change it in the [`modules/locales.nix`](/modules/locales.nix) file before installing the configuration.
 
 > [!WARNING]
-> This configuration has been created for laptops with an Nvidia GeForce RTX card, for AMD graphics cards users, please refer to the [NixOS Wiki page](https://nixos.wiki/wiki/AMD_GPU). Feel free to provide a PR for a `graphics/amd` git branch created from the `main` branch.
->
-> You can check whether or not OpenGL works normally by launching Minetest/Minecraft (Prism Launcher) or by using the `glxinfo` tool
+> The base configuration available on the `main` branch does not provide any graphics driver. For those who want their graphic driver to be installed right away, please refer to the following :
+
+<table><thead>
+  <tr>
+    <th colspan="2">Nvidia<br></th>
+    <th colspan="3">AMD</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td colspan="2">Dedicated GPU<br></td>
+    <td>Dedicated GPU</td>
+    <td colspan="2">Integrated GPU</td>
+  </tr>
+  <tr>
+    <td>Stable<br></td>
+    <td><a href="https://github.com/Altaks/NixOS-polarflake/tree/graphics/nvidia/dedicated/stable"><code>graphics/nvidia/dedicated/stable</code></a></td>
+    <td><em>Work in progress</em></td>
+    <td>Radeon</td>
+    <td><a href="https://github.com/Altaks/NixOS-polarflake/tree/graphics/amd/integrated"><code>graphics/amd/integrated</code></a></td>
+  </tr>
+  <tr>
+    <td>Legacy driver (390)</td>
+    <td><a href="https://github.com/Altaks/NixOS-polarflake/tree/graphics/nvidia/dedicated/legacy_390"><code>graphics/nvidia/dedicated/legacy_390</code></a></td>
+    <td></td>
+    <td>Southern Island</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Legacy driver (370)</td>
+    <td><a href="https://github.com/Altaks/NixOS-polarflake/tree/graphics/nvidia/dedicated/legacy_370"><code>graphics/nvidia/dedicated/legacy_370</code></a></td>
+    <td></td>
+    <td>Sea Island</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Legacy driver (340)</td>
+    <td><a href="https://github.com/Altaks/NixOS-polarflake/tree/graphics/nvidia/dedicated/legacy_340"><code>graphics/nvidia/dedicated/legacy_340</code></a></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+
+*Nvidia users can refer to the following registry : https://www.nvidia.com/en-us/drivers/unix/legacy-gpu/ to determine whether or not their GPU is considered legacy by Nvidia*
+
+*AMD gpu users can refer to the following links : https://en.wikipedia.org/wiki/Radeon_HD_8000_series , https://en.wikipedia.org/wiki/Radeon_HD_7000_series to determine their GPU category name*
 
 ## Installation
 
@@ -45,12 +89,23 @@ After that, you will need Git to clone the configuration easily. You can tempora
 nix-shell -p git
 ```
 
-Then, within the freshly created shell, start installing this configuration using these three commands : 
+Then, within the freshly created shell, start installing this configuration by cloning the configuration files :
 
 ```sh
 # Clone the configuration on your machine
 git clone https://github.com/Altaks/NixOS-polarflake
+```
 
+> [!IMPORTANT]
+> For those who want to get a specific branch to install their drivers at the same time, use the following command instead:
+> ```sh
+> git clone https://github.com/Altaks/NixOS-polarflake -b <branch> 
+> ```
+> Where the `<branch>` argument must be replaced with the needed branch name, for example for an Nvidia RTX you would use the `git clone https://github.com/Altaks/NixOS-polarflake -b graphics/nvidia/dedicated/stable` command.
+
+After cloning the configuration, you only need to execute these commands : 
+
+```sh
 # Warp into the configuration folder
 cd NixOS-polarflake
 
