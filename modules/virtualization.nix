@@ -47,9 +47,6 @@
   # https://nixos.wiki/wiki/Virt-manager
   programs.virt-manager.enable = true;
 
-  # Nvidia GPU passthrough
-  hardware.nvidia-container-toolkit.enable = true;
-
   # Install required packages
   environment.systemPackages = with pkgs; [
 
