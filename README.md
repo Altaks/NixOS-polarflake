@@ -50,7 +50,7 @@ This NixOS configuration provides to following content to the user's system :
     <td><code>nvidia-stable</code></td>
     <td><em>Work in progress</em></td>
     <td>Radeon</td>
-    <td><code>graphics/amd-stable</code></a></td>
+    <td><code>amd-stable</code></a></td>
   </tr>
   <tr>
     <td>Legacy driver (470)</td>
