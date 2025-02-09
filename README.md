@@ -138,8 +138,6 @@ cd NixOS-polarflake
 >
 > - The next most used way is to use the `nix-store --optimise -v` command, which will create internal symlinks in the `/nix/store` folder, that stores every software installed on your system. It removes duplicates and keeps only one instance of a software version. [*(Source)*](https://releases.nixos.org/nix/nix-2.22.3/manual/command-ref/nix-store/optimise.html)
 >
-> - Modifying this project [`configuration.nix`](./configuration.nix) and adding the following : `nix.settings.auto-optimise-store = true;` to the file which will make NixOS optimize the store during the system rebuild. Then reinstall the configuration and reboot. [*(Source)*](https://nixos.wiki/wiki/Storage_optimization)
->
 > - Modifying this project [`configuration.nix`](./configuration.nix) and adding the following `nix.optimise.automatic = true;` which will make NixOS optimize the Nix store during uptime. Then reinstall the configuration and reboot. [*(Source)*](https://nixos.wiki/wiki/Storage_optimization)
 
 > [!IMPORTANT]
