@@ -34,6 +34,10 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
+  services.xserver.desktopManager.gnome.extraGSettingsOverrides = ''
+    [org.gnome.desktop.peripherals.touchpad]
+    click-method='default'
+  '';
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.%%%username%%% = {
