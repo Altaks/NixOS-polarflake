@@ -5,7 +5,7 @@
       nodejs_22 
 
       # Deno - https://deno.com/
-      inputs.nixpkgs-unstable.legacyPackages."${pkgs.system}".deno
+      deno
 
       # TypeScript - https://www.typescriptlang.org/
       typescript

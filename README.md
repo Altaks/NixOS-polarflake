@@ -134,7 +134,7 @@ cd NixOS-polarflake
 >   
 > You can earn your storage back in four different ways :
 > 
-> - The main way is using the `sudo nix-collect-garbage` command that will delete every generation and requires you to rebuild your system once it's finished. You can rebuild it using the `./install.sh` script or the `sudo nixos-rebuild switch` command. [*(Source)*](https://releases.nixos.org/nix/nix-2.22.3/manual/command-ref/nix-collect-garbage.html)
+> - The main way is using the `sudo nix-collect-garbage` command that will delete every generation except the current one. [*(Source)*](https://releases.nixos.org/nix/nix-2.22.3/manual/command-ref/nix-collect-garbage.html)
 >
 > - The next most used way is to use the `nix-store --optimise -v` command, which will create internal symlinks in the `/nix/store` folder, that stores every software installed on your system. It removes duplicates and keeps only one instance of a software version. [*(Source)*](https://releases.nixos.org/nix/nix-2.22.3/manual/command-ref/nix-store/optimise.html)
 >

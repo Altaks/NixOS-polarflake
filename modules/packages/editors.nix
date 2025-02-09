@@ -6,7 +6,7 @@
       nano
 
       # Zed editor - https://zed.dev/
-      inputs.nixpkgs-unstable.legacyPackages."${pkgs.system}".zed-editor
+      zed-editor
 
       # VSCodium (Open Source Visual Studio Code) with preinstalled extensions - https://vscodium.com/
       (vscode-with-extensions.override {
