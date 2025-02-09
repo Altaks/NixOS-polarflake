@@ -12,7 +12,7 @@
     errands                                                        # Post-its
     dialect                                                        # Translation
     hieroglyphic                                                   # Find LaTeX symbols
-    inputs.nixpkgs-unstable.legacyPackages."${pkgs.system}".gaphor # UML Modeling
+    gaphor                                                         # UML Modeling
     lorem                                                          # Generate "Lorem Ipsums"
     metadata-cleaner                                               # Clean file EXIF like data
     eyedropper                                                     # Color picker
@@ -23,7 +23,6 @@
     elastic                                                        # Generate animations
     collision                                                      # Check hashes
 
-    yed                                                            # Graph maker - https://www.yworks.com/products/yed
     tldr                                                           # TLDR pages  - https://tldr.sh/
   ];
 }

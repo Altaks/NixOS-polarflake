@@ -87,4 +87,9 @@ sudo rm -r $HOME/.config/gtk-* $HOME/.config/mimeapps.list
 
 # Start the generation switch
 echo "Switching current system's configuration."
-sudo nixos-rebuild switch --upgrade-all
+
+if [ "$#" -ne 0 ]; then 
+    sudo nixos-rebuild switch --upgrade-all --flake /etc/nixos/#$1
+else 
+    sudo nixos-rebuild switch --upgrade-all --flake /etc/nixos/#base
+fi

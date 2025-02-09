@@ -2,7 +2,7 @@
 
   environment.systemPackages = with pkgs; [
     # Flutter & Dart development - https://flutter.dev/
-    flutter
+    inputs.nixpkgs-unstable.legacyPackages."${pkgs.system}".flutter
     dart
   ];
 }

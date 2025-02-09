@@ -1,5 +1,5 @@
 {
-  description = "NixOS Polarflake configuration manifest";
+  description = "NixOS Polarflake configurations manifest";
 
   # Packages providers list
   inputs = {
@@ -36,7 +36,8 @@
     in rec
     {
       nixosConfigurations = {
-        %%%hostname%%% = nixpkgs.lib.nixosSystem {
+        
+        base = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
           };
@@ -44,6 +45,77 @@
             ./configuration.nix
           ];
         };
+
+        nvidia-stable = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./configuration.nix
+            ./modules/drivers/gpu/nvidia/nvidia-stable.nix
+          ];
+        };
+
+        nvidia-legacy-340 = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./configuration.nix
+            ./modules/drivers/gpu/nvidia/nvidia-legacy-340.nix
+          ];
+        };
+
+        nvidia-legacy-390 = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./configuration.nix
+            ./modules/drivers/gpu/nvidia/nvidia-legacy-390.nix
+          ];
+        };
+
+        nvidia-legacy-470 = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./configuration.nix
+            ./modules/drivers/gpu/nvidia/nvidia-legacy-470.nix
+          ];
+        };
+
+        amd-stable = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./configuration.nix
+            ./modules/drivers/gpu/amd/amd-stable.nix
+          ];
+        };
+
+        amd-legacy = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./configuration.nix
+            ./modules/drivers/gpu/amd/amd-legacy-si-cik.nix
+          ];
+        };
+
+        intel = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./configuration.nix
+            ./modules/drivers/gpu/intel/intel-stable.nix
+          ];
+        };
+
       };
     };
 }

@@ -9,7 +9,6 @@
     ./ui-ux
 
     ./editors.nix
-    ./graphics.nix
     ./media.nix
     ./nix-utilities.nix
     ./notes.nix

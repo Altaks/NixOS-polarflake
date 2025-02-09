@@ -32,7 +32,7 @@ This NixOS configuration provides to following content to the user's system :
 > This configuration is set to apply the :fr: `fr_FR` configuration both for the keyboard & the system's language. You can change it in the [`modules/locales.nix`](/modules/locales.nix) file before installing the configuration.
 
 > [!WARNING]
-> The base configuration available on the `main` branch does not provide any graphics driver. For those who want their graphic driver to be installed right away, please refer to the following :
+> The base configuration is installed by default if you do not provide any profile argument whilst starting the installation script. The base configuration does not provide any hardware related driver (e.g. GPU). For those who want their graphic driver to be installed right away, please refer to the following profiles list :
 
 <table><thead>
   <tr>
@@ -47,28 +47,28 @@ This NixOS configuration provides to following content to the user's system :
   </tr>
   <tr>
     <td>Stable<br></td>
-    <td><a href="https://github.com/Altaks/NixOS-polarflake/tree/graphics/nvidia/dedicated/stable"><code>graphics/nvidia/dedicated/stable</code></a></td>
+    <td><code>nvidia-stable</code></td>
     <td><em>Work in progress</em></td>
     <td>Radeon</td>
-    <td><a href="https://github.com/Altaks/NixOS-polarflake/tree/graphics/amd/integrated"><code>graphics/amd/integrated</code></a></td>
+    <td><code>amd-stable</code></a></td>
+  </tr>
+  <tr>
+    <td>Legacy driver (470)</td>
+    <td><code>nvidia-legacy-470</code></a></td>
+    <td></td>
+    <td>Southern Island</td>
+    <td><code>amd-legacy-si-cik</code></td>
   </tr>
   <tr>
     <td>Legacy driver (390)</td>
-    <td><a href="https://github.com/Altaks/NixOS-polarflake/tree/graphics/nvidia/dedicated/legacy_390"><code>graphics/nvidia/dedicated/legacy_390</code></a></td>
-    <td></td>
-    <td>Southern Island</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>Legacy driver (370)</td>
-    <td><a href="https://github.com/Altaks/NixOS-polarflake/tree/graphics/nvidia/dedicated/legacy_370"><code>graphics/nvidia/dedicated/legacy_370</code></a></td>
+    <td><code>nvidia-legacy-390</code></td>
     <td></td>
     <td>Sea Island</td>
-    <td></td>
+    <td><code>amd-legacy-si-cik</code></td>
   </tr>
   <tr>
     <td>Legacy driver (340)</td>
-    <td><a href="https://github.com/Altaks/NixOS-polarflake/tree/graphics/nvidia/dedicated/legacy_340"><code>graphics/nvidia/dedicated/legacy_340</code></a></td>
+    <td><code>nvidia-legacy-340</code></td>
     <td></td>
     <td></td>
     <td></td>
@@ -96,13 +96,6 @@ Then, within the freshly created shell, start installing this configuration by c
 git clone https://github.com/Altaks/NixOS-polarflake
 ```
 
-> [!IMPORTANT]
-> For those who want to get a specific branch to install their drivers at the same time, use the following command instead:
-> ```sh
-> git clone https://github.com/Altaks/NixOS-polarflake -b <branch> 
-> ```
-> Where the `<branch>` argument must be replaced with the needed branch name, for example for an Nvidia RTX you would use the `git clone https://github.com/Altaks/NixOS-polarflake -b graphics/nvidia/dedicated/stable` command.
-
 After cloning the configuration, you only need to execute these commands : 
 
 ```sh
@@ -111,7 +104,14 @@ cd NixOS-polarflake
 
 # Install the configuration
 # This will ask for sudo mode access. 
-./install.sh
+
+# Base profile installation
+./install.sh 
+
+# OR 
+# Specific profile installation, example : 
+# /install.sh nvidia-stable => Installs the nvidia stable profile
+./install.sh <profile> 
 ```
 
 > [!CAUTION]
