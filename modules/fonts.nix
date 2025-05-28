@@ -4,7 +4,6 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      nerdfonts
       fira-code
       fira-sans
       vistafonts
