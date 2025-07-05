@@ -115,7 +115,7 @@ cd NixOS-polarflake
 ```
 
 > [!CAUTION]
-> Use <kbd>Ctrl</kbd> + <kbd>Z</kbd> to cancel the installation.
+> Use <kbd>Ctrl</kbd> + <kbd>C</kbd> to cancel the installation then reboot to avoid any nix-store deadlocks.
 > If you stopped the script during the generation build/switch phase, you might encounter bugs/crashes/corrupted files.
 > 
 > Once the script ends, you've installed the configuration, the last thing you need to do is to **reboot** your system, using the `sudo reboot now` command or the UI.
