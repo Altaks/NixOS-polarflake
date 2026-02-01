@@ -60,14 +60,15 @@
       jetbrains.webstorm              # JS TS 
       jetbrains.phpstorm              # PHP
       jetbrains.rust-rover            # Rust
-      jetbrains.pycharm-professional  # Python
-      jetbrains.idea-ultimate         # Java, Kotlin
+      jetbrains.pycharm               # Python
+      jetbrains.idea                  # Java, Kotlin
       jetbrains.datagrip              # Database viewer/ide
 
       # Qt Creator - https://doc.qt.io/qtcreator/creator-overview.html
       qtcreator
-      kdePackages.qtbase
-      libsForQt5.full
+      libsForQt5.qt5.qtmultimedia
+      libsForQt5.qt5.qttools
+      libsForQt5.qt5.qtbase
 
       # Libre Office suite - https://www.libreoffice.org/
       libreoffice

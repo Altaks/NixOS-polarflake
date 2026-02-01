@@ -5,7 +5,7 @@
     gpu-viewer
 
     # Graphics related tools https://wiki.nixos.org/wiki/Graphics
-    glxinfo
+    mesa-demos
     vulkan-tools
     clinfo
     libva-utils

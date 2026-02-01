@@ -6,7 +6,7 @@
     teams-for-linux     # Teams - https://www.microsoft.com/en-us/microsoft-teams/log-in
 
     # Minetest client from team building purposes - https://www.luanti.org/
-    minetestclient
+    luanti-client
 
     # Prism Launcher / MultiMC alternative for Minecraft related teamwork - https://prismlauncher.org/
     prismlauncher

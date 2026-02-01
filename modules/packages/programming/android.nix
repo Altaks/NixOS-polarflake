@@ -8,8 +8,4 @@
 
   programs.adb.enable = true;
   programs.nix-ld.enable = true;
-
-  services.udev.packages = [
-    pkgs.android-udev-rules
-  ];
 }

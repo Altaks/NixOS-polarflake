@@ -14,7 +14,6 @@
     ./php.nix
     ./python.nix
     ./rust.nix
-    ./swift.nix
     ./testing.nix
   ];
 

@@ -194,7 +194,7 @@ Official sources :
 - :snowflake: NixOS Wiki : https://nixos.wiki/
 
 Community managed sources : 
-- :house: HomeManager options registry : https://home-manager-options.extranix.com/?query=&release=release-24.11
+- :house: HomeManager options registry : https://home-manager-options.extranix.com/?query=&release=release-25.11
 - :snowflake: NixOS community hardware config collection : https://github.com/NixOS/nixos-hardware 
 
 ## Contributions

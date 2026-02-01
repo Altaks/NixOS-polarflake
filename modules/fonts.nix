@@ -6,7 +6,7 @@
     packages = with pkgs; [
       fira-code
       fira-sans
-      vistafonts
+      vista-fonts
       roboto
     ];
     fontconfig = {

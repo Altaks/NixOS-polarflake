@@ -4,13 +4,13 @@
   # Packages providers list
   inputs = {
 
-    # NixOS packages from stable 24.11 and unstable
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    # NixOS packages from stable 25.11 and unstable
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # Home Manager for NixOS 24.11
+    # Home Manager for NixOS 25.11
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

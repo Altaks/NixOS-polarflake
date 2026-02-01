@@ -3,7 +3,7 @@
   home.username = "%%%username%%%";
   home.homeDirectory = "/home/%%%username%%%";
 
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
 
   nixpkgs.config.allowUnfree = true;
 
@@ -36,7 +36,6 @@
           pkgs.gnomeExtensions.places-status-indicator.extensionUuid
           pkgs.gnomeExtensions.user-themes.extensionUuid
           pkgs.gnomeExtensions.hide-activities-button.extensionUuid
-          pkgs.gnomeExtensions.control-blur-effect-on-lock-screen.extensionUuid
           pkgs.gnomeExtensions.customize-clock-on-lock-screen.extensionUuid
           pkgs.gnomeExtensions.unlock-dialog-background.extensionUuid
           pkgs.gnomeExtensions.extension-list.extensionUuid
@@ -428,7 +427,7 @@
   };
 
   # Define Zen Browser as the system default browser
-  home.sessionVariables.DEFAULT_BROWSER = "${inputs.zen-browser.packages."${pkgs.system}".default}/bin/zen";
+  home.sessionVariables.DEFAULT_BROWSER = "${inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default}/bin/zen";
 
   # Enable Numlock on session enter
   xsession.numlock.enable = true;

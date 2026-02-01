@@ -12,7 +12,6 @@
     gnomeExtensions.places-status-indicator
     gnomeExtensions.user-themes
     gnomeExtensions.hide-activities-button
-    gnomeExtensions.control-blur-effect-on-lock-screen
     gnomeExtensions.customize-clock-on-lock-screen
     gnomeExtensions.unlock-dialog-background
     gnomeExtensions.extension-list
